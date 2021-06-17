@@ -7,7 +7,7 @@ const App = () => (
   <div>
     <img src={starUrl} alt="star" />
     <Star />
-    <span class="star"></span>
+    <span className="star"></span>
   </div>
 );
 
