@@ -1,0 +1,27 @@
+{
+  "name": "new-url-loader",
+  "version": "0.0.0",
+  "description": "A tiny alternative to url-loader and file-loader for webpack 5.",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "peerDependencies": {
+    "webpack": "^5.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marella/new-url-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marella/new-url-loader/issues"
+  },
+  "homepage": "https://github.com/marella/new-url-loader",
+  "keywords": [
+    "webpack",
+    "webpack-loader",
+    "url-loader",
+    "file-loader"
+  ]
+}
