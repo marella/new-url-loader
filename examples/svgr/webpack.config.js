@@ -11,7 +11,7 @@ module.exports = {
         oneOf: [
           {
             dependency: { not: ['url'] },
-            use: ['@svgr/webpack', '../../index.js' /* 'new-url-loader' */],
+            use: ['@svgr/webpack', 'new-url-loader'],
           },
           {
             type: 'asset', // Use 'asset/resource' for file-loader
