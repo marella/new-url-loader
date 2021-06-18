@@ -1,4 +1,4 @@
-# [new-url-loader](https://github.com/marella/new-url-loader)
+# [new-url-loader](https://github.com/marella/new-url-loader) [![tests](https://github.com/marella/new-url-loader/actions/workflows/tests.yml/badge.svg)](https://github.com/marella/new-url-loader/actions/workflows/tests.yml) [![Coverage Status](https://coveralls.io/repos/github/marella/new-url-loader/badge.svg)](https://coveralls.io/github/marella/new-url-loader) [![install size](https://packagephobia.com/badge?p=new-url-loader)](https://packagephobia.com/result?p=new-url-loader)
 
 A tiny alternative to `url-loader` and `file-loader` for webpack 5.
 
