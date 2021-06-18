@@ -25,7 +25,7 @@ const compile = async (rule, { entry, publicPath = '', baseURI } = {}) => {
   });
   const dist = stats.compilation.outputOptions.path;
   const content = fs.readFileSync(path.join(dist, 'main.js')).toString();
-  return execute(content, { baseURI }).toString();
+  return execute(content, { baseURI });
 };
 
 /**
