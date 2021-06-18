@@ -4,23 +4,23 @@ const { compile } = require('./utils');
 const loader = path.resolve(__dirname, '../index.js');
 const files = /\.(png|svg)$/;
 const entries = ['simple.js', 'nested.js'];
+const publicPaths = ['', '/', '/foo/', '/foo/bar', 'foo/', 'foo/bar'];
 const baseURIs = [
   'http://localhost/',
   'http://localhost/foo/',
   'http://localhost/foo/bar',
 ];
-const publicPaths = ['', '/', '/foo/', '/foo/bar', 'foo/', 'foo/bar'];
 const table = [];
 for (const entry of entries) {
-  for (const baseURI of baseURIs) {
-    for (const publicPath of publicPaths) {
-      table.push({ entry, baseURI, publicPath });
+  for (const publicPath of publicPaths) {
+    for (const baseURI of baseURIs) {
+      table.push({ entry, publicPath, baseURI });
     }
   }
 }
 
 describe('loader', () => {
-  it.each(entries)('should match url-loader %s', async (entry) => {
+  it.each(entries)("should match url-loader { entry: '%s' }", async (entry) => {
     const actual = await compile(
       {
         test: files,
@@ -49,7 +49,7 @@ describe('loader', () => {
   });
 
   it.each(table)(
-    'should match file-loader %s',
+    "should match file-loader { entry: '$entry', publicPath: '$publicPath', baseURI: '$baseURI' }",
     async ({ entry, publicPath, baseURI }) => {
       const actual = await compile(
         {
