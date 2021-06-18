@@ -2,6 +2,7 @@ name: tests
 on:
   - push
   - pull_request
+
 jobs:
   test:
     name: Node ${{ matrix.node }} on ${{ matrix.os }}
@@ -24,4 +25,18 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
-      - run: npm test
+      - run: npm test -- --coverage
+      - uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: node-${{ matrix.node }}-on-${{ matrix.os }}
+          parallel: true
+
+  finish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true

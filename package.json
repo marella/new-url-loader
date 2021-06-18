@@ -8,7 +8,6 @@
   "scripts": {
     "test": "jest",
     "start": "npm test -- --watchAll",
-    "coverage": "npm test -- --coverage",
     "prepublishOnly": "npm test",
     "preversion": "npm test"
   },
