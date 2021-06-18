@@ -5,9 +5,28 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "test": "jest",
+    "start": "npm test -- --watchAll",
+    "coverage": "npm test -- --coverage",
+    "prepublishOnly": "npm test",
+    "preversion": "npm test"
+  },
   "main": "index.js",
   "peerDependencies": {
     "webpack": "^5.0.0"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "jest": "^27.0.4",
+    "memfs": "^3.2.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "index.js"
+    ]
   },
   "license": "MIT",
   "repository": {
