@@ -36,7 +36,7 @@ describe('loader', () => {
       },
       { entry }
     );
-    // expect(actual).toMatchSnapshot('result');
+    expect(actual).toMatchSnapshot('result');
 
     const expected = await compile(
       {
@@ -66,7 +66,7 @@ describe('loader', () => {
         },
         { entry, publicPath, baseURI }
       );
-      // expect(actual).toMatchSnapshot('result');
+      expect(actual).toMatchSnapshot('result');
 
       const path = await compile(
         {
