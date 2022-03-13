@@ -98,6 +98,10 @@ By default, files are emitted with `[hash][ext][query]` name to output directory
 
 It also works with `asset` module type. [Learn more](https://webpack.js.org/guides/asset-modules/#custom-output-filename)
 
-### Examples
+### Server Side Rendering
+
+For Server Side Rendering (SSR) when base URL is not known by server, set [`module.parser.javascript.url`](https://webpack.js.org/configuration/module/#moduleparserjavascripturl) to `'relative'` to avoid generating URLs like `file:///path/to/project/dist/file.svg`. See #1.
+
+## Examples
 
 See [examples](https://github.com/marella/new-url-loader/tree/main/examples/svgr).
